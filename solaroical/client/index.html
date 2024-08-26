@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar ROI Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Solar ROI Calculator</h1>
+      <form id="roiForm">
+        <div class="form-group">
+          <label for="totalLoad">Total Load (Watts):</label>
+          <input type="number" id="totalLoad" name="totalLoad" required />
+        </div>
+        <div class="form-group">
+          <label for="kWhConsumed">Daily kWh Consumed:</label>
+          <input type="number" id="kWhConsumed" name="kWhConsumed" />
+        </div>
+        <div class="form-group">
+          <label for="nepaLightHours">Daily NEPA Light (Hours):</label>
+          <input
+            type="number"
+            id="nepaLightHours"
+            name="nepaLightHours"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="backupTime">Desired Backup Time (Hours):</label>
+          <input type="number" id="backupTime" name="backupTime" required />
+        </div>
+        <button type="submit">Calculate ROI</button>
+      </form>
+
+      <div id="results" class="hidden">
+        <h2>Results</h2>
+        <p>Initial Solar Cost: <span id="initialSolarCost"></span></p>
+        <p>Initial Generator Cost: <span id="initialGeneratorCost"></span></p>
+        <p>
+          Monthly Operating Generator Cost:
+          <span id="monthlyOperatingCost"></span>
+        </p>
+        <p>Break-even in: <span id="breakEven"></span></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
